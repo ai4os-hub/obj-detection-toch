@@ -1,7 +1,7 @@
 DEEP Open Catalogue: Object Detection and Classification
 ==============================
 
-[![Build Status](https://jenkins.indigo-datacloud.eu/buildStatus/icon?job=Pipeline-as-code/DEEP-OC-org/obj_detect_pytorch/master)](https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/job/obj_detect_pytorch/job/master)
+[![Build Status](https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/obj-detection-torch/main)](https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/obj-detection-torch/job/main/)
 
 **Author:** Silke Donayre Holtz<br>
 **Project:** This work is part of the [DEEP Hybrid-DataCloud](https://deep-hybrid-datacloud.eu/) project that has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 777435.
@@ -95,10 +95,10 @@ You can test the posenet module on a number of tasks: predict a single local ima
 #### Running the API
 
 
-To access this package's complete functionality (both for training and predicting) through an API you have to install the [DEEPaaS](https://github.com/indigo-dc/DEEPaaS) package:
+To access this package's complete functionality (both for training and predicting) through an API you have to install the [DEEPaaS](https://github.com/ai4os/DEEPaaS) package:
 
 ```bash
-git clone https://github.com/indigo-dc/deepaas
+git clone https://github.com/ai4os/DEEPaaS
 cd deepaas
 pip install -e .
 ```

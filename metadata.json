@@ -54,13 +54,13 @@
     "license": "MIT",
     "date_creation": "2019-10-17",
     "sources": {
-		"dockerfile_repo": "https://github.com/deephdc/DEEP-OC-obj_detect_pytorch",
-		"docker_registry_repo": "deephdc/deep-oc-obj_detect_pytorch",
-		"code": "https://github.com/deephdc/obj_detect_pytorch"
+		"dockerfile_repo": "https://github.com/ai4os-hub/obj-detection-torch",
+		"docker_registry_repo": "ai4oshub/obj-detection-torch",
+		"code": "https://github.com/ai4os-hub/obj-detection-torch"
 	},
     "continuous_integration": {
-        "build_status_badge": "https://jenkins.indigo-datacloud.eu/buildStatus/icon?job=Pipeline-as-code/DEEP-OC-org/DEEP-OC-obj_detect_pytorch/master",
-        "build_status_url": "https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/job/DEEP-OC-obj_detect_pytorch/job/master"
+        "build_status_badge": "https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/obj-detection-torch/main",
+        "build_status_url": "https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/obj-detection-torch/job/main/"
     },
     "tosca": [
         {
