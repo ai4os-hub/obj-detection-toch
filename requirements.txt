@@ -1,16 +1,39 @@
-# external requirements
+# The following is added by the migration.sh script #
+# Versions are taken from the relevant docker image #
+#
+# For old modules one may need to add:
+# aiohttp~=3.6.0
+# flask~=1.1.0
+# Jinja2~=2.11.0
+# deepaas>=1.3.0
+# flaat~=0.8.0
 
-Sphinx
-python-dotenv>=0.5.1
+Sphinx~=3.0.2
+python-dotenv~=0.13.0
+Pillow~=7.0.0
+opencv-python~=4.2.0.34
+fpdf~=1.7.2
+matplotlib~=3.1.1
+Cython~=0.29.14
+pandas~=1.0.3
+pycocotools~=2.0.0
+deepaas~=1.3.0
+aiohttp~=3.6.0
+flaat~=0.6.0
 
-Pillow
-opencv-python>=4.1.1.26
-fpdf==1.7.2
-matplotlib==3.1.1
-cython
-pandas
-# Note: pycocotools has buggy installation: 
-# cython and numpy have to be installed manually before pycocotools
-pycocotools==2.0.0 
-deepaas>=1.0.1
-flaat>=0.5.3
+# Below is the old content of requirements.txt
+#
+## external requirements
+#Sphinx
+#python-dotenv>=0.5.1
+#Pillow
+#opencv-python>=4.1.1.26
+#fpdf==1.7.2
+#matplotlib==3.1.1
+#cython
+#pandas
+## Note: pycocotools has buggy installation: 
+## cython and numpy have to be installed manually before pycocotools
+#pycocotools==2.0.0 
+#deepaas>=1.0.1
+#flaat>=0.5.3
