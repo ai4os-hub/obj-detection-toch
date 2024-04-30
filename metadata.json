@@ -15,7 +15,7 @@
  	"classified object is located.",
 	"It also provides you the probability of the classified detected object.\n",
 
-	"<img class='fit' width='30%', src='https://raw.githubusercontent.com/SilkeDH/obj_detect_pytorch/master/reports/figures/dog_broccoli.png'/>\n",
+	"<img class='fit' width='30%', src='https://raw.githubusercontent.com/ai4os-hub/obj-detection-torch/main/reports/figures/dog_broccoli.png'/>\n",
 
 	"The TRAINING method uses transfer learning and expects different parameters like learning rate, name of the clases, etc.",
 	"Transfer learning focuses on storing knowledge gained while solving one problem and applying it to a different but related",
@@ -25,7 +25,7 @@
 	"The model requires a new dataset with the classes that are going to be classified and detected. In this case the Penn-Fudan",
 	"Database for Pedestrian Detection and Segmentation was used to detect pedestrians.\n",
 
-	"<img class='fit' width='70%', src='https://raw.githubusercontent.com/SilkeDH/obj_detect_pytorch/master/reports/figures/pytorchobj.png'/>\n",
+	"<img class='fit' width='70%', src='https://raw.githubusercontent.com/ai4os-hub/obj-detection-torch/main/reports/figures/pytorchobj.png'/>\n",
 
 	"To try this in the module, the two dataset folders (Images and Masks) must be placed in the obj_detect_pytorch/dataset/",
 	"folder. More information about the code, the Penn Fudan Dataset and the structuring of a custom dataset can be found at [Torchvision Object Detection Finetuning](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html).\n",

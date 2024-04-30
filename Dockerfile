@@ -33,12 +33,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /root/.cache/pip/* && \
-    rm -rf /tmp/* && \
-       fi; \
-    fi && \
+    rm -rf /tmp/* 
+
+# Upgrade pip
+RUN pip install --upgrade pip setuptools wheel && \
     python --version && \
     pip --version
-
 
 # Set LANG environment
 ENV LANG C.UTF-8
@@ -49,13 +49,11 @@ WORKDIR /srv
 # Install rclone
 RUN wget https://downloads.rclone.org/rclone-current-linux-amd64.deb && \
     dpkg -i rclone-current-linux-amd64.deb && \
-    apt install -f && \
+    apt-get install -f && \
     mkdir /srv/.rclone/ && touch /srv/.rclone/rclone.conf && \
     rm rclone-current-linux-amd64.deb && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    rm -rf /root/.cache/pip/* && \
-    rm -rf /tmp/*
+    rm -rf /var/lib/apt/lists/*
 
 # install it manually due to a bug in the installation of pycocotools
 RUN pip install cython==0.29.14
@@ -78,7 +76,7 @@ ENV SHELL /bin/bash
 
 # Install user app:
 RUN git clone -b $branch https://github.com/ai4os-hub/obj-detection-torch && \
-    cd  obj_detect_pytorch && \
+    cd  obj-detection-torch && \
     pip install --no-cache-dir -e . && \
     rm -rf /root/.cache/pip/* && \
     rm -rf /tmp/* && \
