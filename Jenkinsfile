@@ -7,10 +7,10 @@ pipeline {
 
     stages {
         stage('Application testing') {
-            // do not execute Application Testing, if Dockerfile.cicd has changed
+            // do not execute Application Testing, if branch cicd
             when {
                 not {
-                    changeset 'Dockerfile.cicd'
+                    branch 'cicd'
                 }
             }
             steps {
