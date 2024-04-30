@@ -2,7 +2,7 @@ version: "3.6"
 
 services:
   thisrepo-testing:
-    image: "deephdc/ci_cd-obj_detect_pytorch"
+    image: "ai4oshub/obj-detection-torch:cicd"
     container_name: "${BUILD_TAG}"
     hostname: "${BUILD_TAG}"
     working_dir: /srv

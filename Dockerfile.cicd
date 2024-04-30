@@ -1,0 +1,72 @@
+# Dockerfile to run tests for obj_detect_pytorch app
+# Dockerfile may have following Arguments:
+# image - base image (default: ubuntu)
+# tag - tag for the image (default: 18.04)
+# USER - default user inside the container (user)
+# UID - user ID in the container (default: 1001)
+#
+# To build the image:
+# $ docker build -t <dockerhub_user>/<dockerhub_repo> --build-arg arg=value .
+# or using default args:
+# $ docker build -t <dockerhub_user>/<dockerhub_repo> .
+
+ARG image=ubuntu
+ARG tag=18.04
+# Base image, e.g. ubuntu:18.04
+FROM ${image}:${tag}
+
+LABEL maintainer='Silke Donayre'
+LABEL version='0.1.0'
+
+# CICD for Object detection with pytorch
+
+# Default user
+ARG USER=user
+ARG UID=1001
+
+# Install ubuntu updates, packages for testing obj_detect_pytorch
+# and python related stuff.
+# link python3 to python, pip3 to pip, if needed
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+    apt-get install -y --no-install-recommends \
+         cloc \
+         curl \
+         gcc \
+         git \
+         tox \
+         wget \
+         libglib2.0-0 \
+         libsm6 \
+         libxext6 \
+         libxrender1 \
+         language-pack-en \
+         python3-dev \
+         python3-pip \
+         python3-setuptools \
+         python3-wheel && \ 
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /root/.cache/pip/* && \
+    rm -rf /tmp/* 
+
+# Upgrade pip
+RUN pip install --upgrade pip setuptools wheel && \
+    python --version && \
+    pip --version
+
+# Set LANG environment
+ENV LANG C.UTF-8
+
+# install cython, numpy manually as pycocotools depend on them
+# but does not require during the installation (bug)
+RUN pip install --no-cache cython==0.29.14  numpy
+
+# Need to set the user for Jenkins (default UID is 1001)
+ENV USER ${USER}
+RUN useradd -m ${USER} --uid=${UID} && chmod -R 0777 /home/${USER}
+ENV HOME /home/${USER}
+
+# Set the working directory
+WORKDIR /home/user
+
+CMD ["tail","-f","/dev/null"]

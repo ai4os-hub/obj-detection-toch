@@ -7,6 +7,12 @@ pipeline {
 
     stages {
         stage('Application testing') {
+            // do not execute Application Testing, if Dockerfile.cicd has changed
+            when {
+                not {
+                    changeset 'Dockerfile.cicd'
+                }
+            }
             steps {
                 script {
                     projectConfig = pipelineConfig()
