@@ -11,6 +11,6 @@ import groovy.transform.Field
 //def base_gpu_tag = ''
 
 @Field
-def dockerfile = 'Dockerfile'
+def dockerfile = 'Dockerfile.cicd'
 
 return this;
