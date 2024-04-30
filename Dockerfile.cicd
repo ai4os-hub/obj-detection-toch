@@ -25,7 +25,6 @@ ARG UID=1001
 
 # Install ubuntu updates, packages for testing obj_detect_pytorch
 # and python related stuff.
-# link python3 to python, pip3 to pip, if needed
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get install -y --no-install-recommends \
          cloc \
@@ -49,16 +48,16 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     rm -rf /tmp/* 
 
 # Upgrade pip
-RUN pip install --upgrade pip setuptools wheel && \
-    python --version && \
-    pip --version
+RUN pip3 install --upgrade pip setuptools wheel && \
+    python3 --version && \
+    pip3 --version
 
 # Set LANG environment
 ENV LANG C.UTF-8
 
 # install cython, numpy manually as pycocotools depend on them
 # but does not require during the installation (bug)
-RUN pip install --no-cache cython==0.29.14  numpy
+RUN pip3 install --no-cache cython==0.29.14  numpy
 
 # Need to set the user for Jenkins (default UID is 1001)
 ENV USER ${USER}
