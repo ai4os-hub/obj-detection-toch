@@ -1,7 +1,7 @@
 DEEP Open Catalogue: Object Detection and Classification
 ==============================
 
-[![Build Status](https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/obj-detection-torch/main)](https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/obj-detection-torch/job/main/)
+[![Build Status](https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/obj-detection-torch/cicd)](https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/obj-detection-torch/job/cicd/)
 
 **Author:** Silke Donayre Holtz<br>
 **Project:** This work is part of the [DEEP Hybrid-DataCloud](https://deep-hybrid-datacloud.eu/) project that has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 777435.

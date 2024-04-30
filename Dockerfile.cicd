@@ -15,10 +15,9 @@ ARG tag=18.04
 # Base image, e.g. ubuntu:18.04
 FROM ${image}:${tag}
 
+# CICD for Object detection with pytorch
 LABEL maintainer='Silke Donayre'
 LABEL version='0.1.0'
-
-# CICD for Object detection with pytorch
 
 # Default user
 ARG USER=user
@@ -47,7 +46,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /root/.cache/pip/* && \
-    rm -rf /tmp/* 
+    rm -rf /tmp/*
 
 # Upgrade pip
 RUN pip install --upgrade pip setuptools wheel && \
