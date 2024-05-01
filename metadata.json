@@ -53,10 +53,12 @@
     ],
     "license": "MIT",
     "date_creation": "2019-10-17",
+    "dataset_url": "https://cocodataset.org/",
     "sources": {
 		"dockerfile_repo": "https://github.com/ai4os-hub/obj-detection-torch",
 		"docker_registry_repo": "ai4oshub/obj-detection-torch",
-		"code": "https://github.com/ai4os-hub/obj-detection-torch"
+		"code": "https://github.com/ai4os-hub/obj-detection-torch",
+                "ai4_template": "ai4-template/1.9.9"
 	},
     "continuous_integration": {
         "build_status_badge": "https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/obj-detection-torch/main",

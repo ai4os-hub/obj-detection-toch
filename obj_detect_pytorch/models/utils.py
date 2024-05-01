@@ -2,7 +2,7 @@ from __future__ import print_function
 
 from collections import defaultdict, deque
 import datetime
-import pickle
+import pickle  # nosec
 import time
 
 import torch
@@ -112,7 +112,7 @@ def all_gather(data):
     data_list = []
     for size, tensor in zip(size_list, tensor_list):
         buffer = tensor.cpu().numpy().tobytes()[:size]
-        data_list.append(pickle.loads(buffer))
+        data_list.append(pickle.loads(buffer))  # nosec
 
     return data_list
 
@@ -153,7 +153,8 @@ class MetricLogger(object):
         for k, v in kwargs.items():
             if isinstance(v, torch.Tensor):
                 v = v.item()
-            assert isinstance(v, (float, int))
+            if not isinstance(v, (float, int)):
+                raise TypeError("Value is neither float or int")
             self.meters[k].update(v)
 
     def __getattr__(self, attr):

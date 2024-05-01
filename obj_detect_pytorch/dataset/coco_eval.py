@@ -18,7 +18,8 @@ import obj_detect_pytorch.models.utils as utils
 
 class CocoEvaluator(object):
     def __init__(self, coco_gt, iou_types):
-        assert isinstance(iou_types, (list, tuple))
+        if not isinstance(iou_types, (list, tuple)): 
+            raise TypeError("iou_types must be either list or tuple!")
         coco_gt = copy.deepcopy(coco_gt)
         self.coco_gt = coco_gt
 
@@ -252,10 +253,12 @@ def loadRes(self, resFile):
         anns = self.loadNumpyAnnotations(resFile)
     else:
         anns = resFile
-    assert type(anns) == list, 'results in not an array of objects'
+
+    if not type(anns) == list:
+        raise TypeError("Results (anns) is not an array of objects")
     annsImgIds = [ann['image_id'] for ann in anns]
-    assert set(annsImgIds) == (set(annsImgIds) & set(self.getImgIds())), \
-        'Results do not correspond to current coco set'
+    if not set(annsImgIds) == (set(annsImgIds) & set(self.getImgIds())):
+        raise TypeError("Results (annImgIds) do not correspond to current coco set")
     if 'caption' in anns[0]:
         imgIds = set([img['id'] for img in res.dataset['images']]) & set([ann['image_id'] for ann in anns])
         res.dataset['images'] = [img for img in res.dataset['images'] if img['id'] in imgIds]

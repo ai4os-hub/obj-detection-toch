@@ -29,7 +29,7 @@ class RandomHorizontalFlip(object):
         self.prob = prob
 
     def __call__(self, image, target):
-        if random.random() < self.prob:
+        if random.random() < self.prob:  # nosec
             height, width = image.shape[-2:]
             image = image.flip(-1)
             bbox = target["boxes"]
