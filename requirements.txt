@@ -17,7 +17,7 @@ matplotlib~=3.1.1
 Cython~=0.29.14
 pandas~=1.0.3
 pycocotools~=2.0.0
-deepaas~=1.3.0
+deepaas>=1.3.0, <3.0
 aiohttp~=3.6.0
 flaat~=0.6.0
 
